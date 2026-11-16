@@ -2,6 +2,6 @@
   "name": "clawd-wallpaper",
   "owner": { "name": "maliguness" },
   "plugins": [
-    { "name": "clawd-wallpaper", "source": "./", "description": "Dark pixel-art Clawd room as the Claude Code desktop backdrop, on a pure-black palette." }
+    { "name": "clawd-wallpaper", "source": "./", "description": "Dark pixel-art Clawd room covering the whole Claude Code desktop backdrop, on a pure-black palette." }
   ]
 }

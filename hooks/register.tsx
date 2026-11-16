@@ -3,10 +3,10 @@ import type { Register, ThemeSetArgs } from 'claude-code'
 import { makeColors } from './make-colors.js'
 import { ROOM_PATHS } from './room-paths.js'
 
-// Clawd's dark pixel room, drawn as vector pixels pinned bottom-right; its edges melt into #141413.
-const SCENE = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" preserveAspectRatio="xMaxYMax slice">
-<rect width="1600" height="1000" fill="#000000"/>
-<svg x="48%" y="46%" width="52%" height="50%" viewBox="0 0 404 254" preserveAspectRatio="xMaxYMax meet" shape-rendering="crispEdges" opacity="0.92">${ROOM_PATHS}</svg>
+// Clawd's dark pixel room, drawn as vector pixels. It covers the whole backdrop (slice, anchored bottom-right), with a faint ambient floor and wall everywhere so it never fades to bare black; panels are translucent so it shows through them.
+const SCENE = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 404 224" preserveAspectRatio="xMaxYMax slice" shape-rendering="crispEdges">
+<rect width="404" height="254" fill="#000000"/>
+<g opacity="0.92">${ROOM_PATHS}</g>
 </svg>`
 
 const { theme, problems } = makeColors({
@@ -28,7 +28,7 @@ const { theme, problems } = makeColors({
   only: 'dark',
 })
 
-const LOOK: ThemeSetArgs = { colors: theme, backdrop: { scene: 'clawd-room', glass: false } }
+const LOOK: ThemeSetArgs = { colors: theme, backdrop: { scene: 'clawd-room', glass: { blur: 0, opacity: 0.4 } } }
 
 export const register: Register = on => {
   on('session.start', async ($, e, next) => {

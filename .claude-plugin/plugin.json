@@ -1,7 +1,7 @@
 {
   "name": "clawd-wallpaper",
-  "version": "0.1.0",
-  "description": "Dark pixel-art Clawd room as the Claude Code desktop backdrop, on a pure-black palette.",
+  "version": "0.2.0",
+  "description": "Dark pixel-art Clawd room covering the whole Claude Code desktop backdrop, on a pure-black palette.",
   "author": { "name": "maliguness" },
   "license": "MIT"
 }
